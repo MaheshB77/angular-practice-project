@@ -9,16 +9,16 @@
         <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
       </li>
       <!-- We have to add "show" class to below link to show the group -->
-      <li class="nav-item dropdown" [ngClass]="{ show: dropdown }">
+      <!-- <li class="nav-item dropdown" [ngClass]="{ show: dropdown }">
         <a class="nav-link dropdown-toggle" (click)="dropdown = !dropdown">
           Manage
         </a>
-        <!-- We have to add "show" class to below div to show the group -->
+
         <div class="dropdown-menu" [ngClass]="{ show: dropdown }">
           <a class="dropdown-item">Save Data</a>
           <a class="dropdown-item">Fetch Data</a>
         </div>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>
