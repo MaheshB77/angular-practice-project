@@ -1,0 +1,56 @@
+<!-- Recipe Image -->
+<div class="row">
+  <div class="col-md-12">
+    <img src="{{ selectedRecipe.imagePath }}" class="img-fluid" alt="" />
+  </div>
+</div>
+
+<!-- Recipe Name -->
+<div class="row">
+  <div class="col-md-12">
+    <h1>{{ selectedRecipe.name }}</h1>
+  </div>
+</div>
+
+<!-- Manage Recipe -->
+<div class="row">
+  <div class="col-md-12">
+    <!-- We have to add "show" class to below group to show the button group -->
+    <div class="btn-group" [ngClass]="{ show: dropdown }">
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        (click)="toggleDropdown()"
+      >
+        Manage Recipe
+      </button>
+      <!-- We have to add "show" class to below group to show the button group -->
+      <div class="dropdown-menu" [ngClass]="{ show: dropdown }">
+        <a class="dropdown-item" (click)="addToShoppingList()"
+          >To Shopping List</a
+        >
+        <a class="dropdown-item" [routerLink]="['../', 'edit']">Edit Recipe</a>
+        <a class="dropdown-item" (click)="onDelete()">Delete Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recipe Description -->
+<div class="row">
+  <div class="col-md-12">Description: {{ selectedRecipe.description }}</div>
+</div>
+
+<!-- Recipe Ingredients -->
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let ingredient of selectedRecipe.ingredients"
+      >
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
+  </div>
+</div>
